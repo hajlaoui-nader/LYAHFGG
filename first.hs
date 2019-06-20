@@ -1,5 +1,5 @@
 import Data.List
-
+import qualified Geometry.Sphere as Sphere
 doubleMe x = x + x
 doubleUs x y = doubleMe x + doubleMe y
 
@@ -9,7 +9,7 @@ else doubleMe x
 
 boomBangs xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, odd x]   
 
-removeNonUppercase :: [Char] -> [Char]
+removeNonUppercase :: String -> String
 removeNonUppercase st = [ c | c <- st, c `elem` ['A'..'Z']]
 
 addThree :: Int -> Int -> Int -> Int 
@@ -99,3 +99,4 @@ findKey key ((k,v):xs) = if key == k
 
 phoneBook = [("betty","555-2938"),("bonnie","452-2928"),("patsy","493-2928"),("lucille","205-2928"),("wendy","939-8282"),("penny","853-2492")]
 
+sph = Sphere.volume
