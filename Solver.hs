@@ -53,7 +53,7 @@ main = do
     let three = groupsOf 3 (map read $ lines contents)
         roadSystem = map (\[a,b,c] -> Section a b c) three
         path = optimalPath roadSystem
-        pathString = concat $ map (show . fst) path  
+        pathString = concatMap (show . fst) path  
         pathPrice = sum $ map snd path  
     putStrLn $ "The best path to take is: " ++ pathString  
     putStrLn $ "The price is: " ++ show pathPrice  
