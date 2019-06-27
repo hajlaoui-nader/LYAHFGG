@@ -17,3 +17,22 @@ Prelude> name papu
 "papu"
 ```
 
+## Sum types
+example : ```data Bool = False | True```
+
+## Product types
+A product type’s cardinality is the product of the cardinalities of its inhabitants.
+Arithmetically, products are the result of multiplication. Where
+a sum type was expressing `or`, a product type expresses `and`.
+
+## Normal form
+Normal form is product types distributed over sum types
+
+## As pattern
+
+```
+f :: Show a => (a, b) -> IO (a, b)
+f t@(a, _) = do
+    print a
+    return t
+```
